@@ -32,6 +32,10 @@ Pod::Spec.new do |s|
   s.subspec 'standard' do |ss|
     ss.source_files = 'Sources/{SQLite,SQLiteObjc}/**/*.{c,h,m,swift}'
     ss.exclude_files = 'Sources/**/Cipher.swift'
+    ss.public_header_files = [
+      'Sources/SQLite/SQLite.h',
+      'Sources/SQLiteObjc/include/SQLite.h',
+    ]
     ss.private_header_files = 'Sources/SQLiteObjc/*.h'
     ss.library = 'sqlite3'
 
