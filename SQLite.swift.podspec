@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
       'Sources/SQLite/SQLite.h',
       'Sources/SQLiteObjc/include/SQLite.h',
     ]
-    ss.private_header_files = 'Sources/SQLiteObjc/*.h'
+    ss.private_header_files = 'Sources/SQLiteObjc/fts3_tokenizer.h'
     ss.library = 'sqlite3'
 
     ss.test_spec 'tests' do |test_spec|
