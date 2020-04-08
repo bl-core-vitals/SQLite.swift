@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
     ss.exclude_files = 'Sources/**/Cipher.swift'
     ss.public_header_files = [
       'Sources/SQLite/SQLite.h',
-      'Sources/SQLiteObjc/include/SQLite.h',
+      'Sources/SQLiteObjc/include/SQLiteObjc.h',
     ]
     ss.private_header_files = 'Sources/SQLiteObjc/fts3_tokenizer.h'
     ss.library = 'sqlite3'
