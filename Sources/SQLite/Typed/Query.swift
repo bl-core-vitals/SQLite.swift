@@ -930,9 +930,11 @@ extension Connection {
     
 
     public func prepareRowIterator(_ query: QueryType) throws -> RowIterator {
-        let expression = query.expression
-        let statement = try prepare(expression.template, expression.bindings)
-        return RowIterator(statement: statement, columnNames: try columnNamesForQuery(query))
+        return try sync {
+            let expression = query.expression
+            let statement = try prepare(expression.template, expression.bindings)
+            return RowIterator(statement: statement, columnNames: try columnNamesForQuery(query))
+        }
     }
 
     private func columnNamesForQuery(_ query: QueryType) throws -> [String: Int] {
